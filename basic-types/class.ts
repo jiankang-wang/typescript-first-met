@@ -47,3 +47,44 @@ console.log(maomao.run())
 
 // 修饰符 readonly private protected
 
+// interface 和 class 连用 implements
+// 公共提取出来
+interface Radio {
+  switchRadio(): void;
+}
+interface Battery {
+  checkBatteryStatus()
+}
+// 接口合并
+interface RadioWithbattery extends Radio {
+  checkBatteryStatus()
+}
+
+class Car implements Radio {
+  switchRadio() {
+
+  }
+}
+
+class Cellphone implements Radio, Battery {
+  switchRadio() {
+
+  }
+  checkBatteryStatus() {
+
+  }
+}
+
+class CellphoneTwo implements RadioWithbattery {
+  switchRadio() {
+
+  }
+  checkBatteryStatus() {
+
+  }
+}
+
+
+
+
+
