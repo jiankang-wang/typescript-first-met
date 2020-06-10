@@ -1,6 +1,10 @@
 // 6:Class
 class Animal {
   name: string;
+  static categories: string[] = ['mammal', 'bird'];
+  static isAnimal(a) {
+    return a instanceof Animal
+  }
   constructor(name: string) {
     this.name = name
   }
@@ -8,9 +12,15 @@ class Animal {
     return `${this.name} is runing`
   }
 }
+// 静态属性的访问, 不需要实例话
+console.log(Animal.categories)
 
+// 实例化
 const snake  = new Animal('lily')
+// 静态方法
+console.log(Animal.isAnimal(snake))
 console.log(snake.run())
+console.log(snake.name)
 
 // 1: 继承
 class Dog extends Animal {
@@ -34,3 +44,6 @@ class Cat extends Animal{
 
 const maomao = new Cat('毛毛')
 console.log(maomao.run())
+
+// 修饰符 readonly private protected
+
